@@ -71,7 +71,7 @@ if (isset($_POST['username'])){
                         <label><b>Username</b></label>
                         <input class="w3-input w3-border w3-margin-bottom" id="usernameid" type="text" placeholder="Enter Username" name="username" required>
                         <label><b>Password</b></label>
-                        <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="password" required>
+                        <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="password" required>
                         <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
                         <input class="w3-check w3-margin-top" type="checkbox" checked> Remember Me <br>
                     </div>

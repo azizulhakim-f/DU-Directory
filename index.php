@@ -95,6 +95,7 @@ include("auth.php");
         </div>
     </header>
 
+
     <div class="w3-row-padding" id="contactdisplay">
         <?php include ("getData.php") ?>
     </div>

@@ -15,12 +15,22 @@ if(!empty($_POST['dept'])){
     $sql .= "'" . $_POST['dept'] . "'";
 }
 else {
+    $_POST['dept'] = 'কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ';
     $sql = "SELECT * FROM `info` WHERE `subdivision` = ";
     $sql .= "'কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ'";
 }
 
 $count = 0;
 $display = "";
+
+//DEPARTMENT NAME PART
+$dept = "<div class=\"w3-row-padding\" id=\"deptartmentdisplay\">";
+$dept .= "<div class=\"w3-container w3-white w3-center w3-margin w3-gray w3-round-xlarge w3-hover-text-white w3-hover-black\">";
+$dept .= "<h3><b>". $_POST['dept'] . "</b></h3>";
+$dept .= "</div>";
+$dept .= "</div>";
+$display .= $dept;
+
 $display .= "<div class=\"w3-row-padding\" id=\"contactdisplay\">";
 
 $result = mysqli_query($con,$sql);
@@ -28,11 +38,20 @@ while($row = mysqli_fetch_assoc($result)) {
     if( $count>0 && $count%3==0){
         $display .= "</div><div class=\"w3-row-padding\">";
     }
-    $display .= "<div class=\"w3-third w3-container w3-margin-bottom\">";
-    $display .= "<div class=\"w3-container w3-white w3-center\">";
-    $display .= "<h5><b>" . $row["name"] . "</b></h5>";
-    $display .= "<p>" . $row["designation"] . "</p>";
 
+
+
+
+    $display .= "<div class=\"w3-third w3-container w3-margin-bottom \">";
+    $display .= "<div class=\"w3-container w3-white w3-center w3-round-large\">";
+
+    //NAME PART
+    $name = "<header class=\"w3-container w3-center \">";
+    $name .= "<h5><b>". $row["name"] . "</b></h5>";
+    $name .= "</header>";
+    $display .= $name;
+
+    $display .= "<p>" . $row["designation"] . "</p>";
     $phn = "<div class=\"w3-row\">";
     $phn .= "<div class=\"w3-half w3-container\"><p>";
     if($row["phone1"]) $phn .= $row["phone1"];
@@ -41,21 +60,26 @@ while($row = mysqli_fetch_assoc($result)) {
     if($row["phone2"]) $phn .= $row["phone2"];
     $phn .= "</p> </div>";
     $phn .= "</div>";
-
     $display .= $phn;
-
-
     if($row["email1"]){
         $display .= "<p>" . $row["email1"] . "</p>";
     }
-
     if($row["email2"]){
         $display .= "<p>" . $row["email2"] . "</p>";
     }
 
+    //BUTTONS
+    $button = "<button class=\"w3-button  w3-dark-gray\">Accept</button>";
+    $button .= "<button class=\"w3-button  w3-dark-gray\">Decline</button>";
+    $display .= $button;
 
     $display .= "</div>";
     $display .= "</div>";
+
+
+
+
+
     $count++;
 }
 

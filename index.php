@@ -5,18 +5,22 @@ include("auth.php");
 
 <!DOCTYPE html>
 <html>
-<title>DU Directory Dashboard</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <title>DU Directory Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    </style>
+</head>
+
+
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
 <!-- Sidebar/menu -->
@@ -87,7 +91,7 @@ include("auth.php");
                     </div>
 
                     <span class="w3-margin-right w3-black w3-button" onclick="getContacts()">Filter</span>
-                    <script src = "js/subdivisionOption.js"></script>
+                    <script src = "js/subdivisionFilter.js"></script>
                     <script src = "js/ajaxscript.js"></script>
                 </div>
             </div>
@@ -99,6 +103,11 @@ include("auth.php");
     <div class="w3-row-padding" id="contactdisplay">
         <?php include ("getData.php") ?>
     </div>
+
+    <div class="container" id="dummymodal">
+    </div>
+
+    <script src = 'js/cardbuttons.js'></script>
 
     <!-- Pagination -->
     <div class="w3-center w3-padding-32">
@@ -161,17 +170,17 @@ include("auth.php");
 
             <div class="w3-section">
                 <label>Name</label>
-                <input class="w3-input w3-border" type="text" name="Name" required>
+                <input class="w3-input w3-border" type="text" id="form_name" name="Name" required>
             </div>
 
             <div class="w3-section">
                 <label>Designation</label>
-                <input class="w3-input w3-border" type="text" name="designation" required>
+                <input class="w3-input w3-border" type="text" id="form_designation" name="designation" required>
             </div>
 
             <div class="w3-section" name="optionmenu">
                 <label>Division</label>
-                <select class="w3-select" type="text" name="division" required onChange="updatesubdivision(this.options[this.options.selectedIndex].value)" >
+                <select class="w3-select" type="text" id="form_division"  name="division" required onChange="updatesubdivisionOption(this.options[this.options.selectedIndex].value)" >
                     <option value="" disabled selected>Choose Division</option>
                     <?php
                     $sel_query="SELECT DISTINCT division FROM info;";
@@ -182,8 +191,14 @@ include("auth.php");
                 </select>
 
                 <label>Sub-Division</label>
-                <select class="w3-select" id="subdivisionid" name="subdivision" required>
+                <select class="w3-select" type="text" id="form_subdivision" name="subdivision" required>
                     <option value="" disabled selected>Choose SubDivision</option>
+                    <?php
+                    $sel_query="SELECT DISTINCT subdivision FROM info;";
+                    $result = mysqli_query($con,$sel_query);
+                    while($row = mysqli_fetch_assoc($result)) { ?>
+                        <option value= "<?php echo $row["subdivision"]?>" >  <?php echo $row["subdivision"]?> </option>
+                    <?php } ?>
                 </select>
 
                 <div id="dom-target" style="display: none;">
@@ -201,7 +216,7 @@ include("auth.php");
 
             <div class="w3-section">
                 <label>Mobile</label>
-                <input class="w3-input w3-border" type="number" name="phone1" required>
+                <input class="w3-input w3-border" type="number" id="form_phone1" name="phone1" required>
             </div>
 
             <div class="w3-section">

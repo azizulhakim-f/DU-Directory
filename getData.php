@@ -25,7 +25,7 @@ $display = "";
 
 //DEPARTMENT NAME PART
 $dept = "<div class=\"w3-row-padding\" id=\"deptartmentdisplay\">";
-$dept .= "<div class=\"w3-container w3-white w3-center w3-margin w3-gray w3-round-xlarge w3-hover-text-white w3-hover-black\">";
+$dept .= "<div class=\"w3-container w3-white w3-center w3-margin w3-gray w3-round-xlarge\">";
 $dept .= "<h3><b>". $_POST['dept'] . "</b></h3>";
 $dept .= "</div>";
 $dept .= "</div>";
@@ -69,8 +69,9 @@ while($row = mysqli_fetch_assoc($result)) {
     }
 
     //BUTTONS
-    $button = "<button class=\"w3-button  w3-dark-gray\">Accept</button>";
-    $button .= "<button class=\"w3-button  w3-dark-gray\">Decline</button>";
+
+    $button = "<button class=\"w3-button  w3-dark-gray\" onclick='editContact(" . $row['id'] . ")' >Accept</button>";
+    $button .= "<button class=\"w3-button  w3-dark-gray\" onclick='deleteContact(" . $row['id'] . ")' >Decline</button>";
     $display .= $button;
 
     $display .= "</div>";

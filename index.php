@@ -31,21 +31,13 @@ include("auth.php");
         </a>
         <img src="image/du.png" style="width:80%;" class="w3-round"><br><br>
         <h4><b>DU DASHBOARD</b></h4>
-        <p class="w3-text-grey">Text todo</p>
+        <p class="w3-text-grey"></p>
     </div>
     <div class="w3-bar-block">
-        <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>DIRECTORY</a>
-        <a href="#statistics" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>STATISTICS</a>
-        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
-        <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>LOGOUT</a>
-    </div>
-    <div class="w3-panel w3-large">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <a href="#directory" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-address-book fa-fw w3-margin-right"></i>DIRECTORY</a>
+        <a href="#statistics" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bar-chart fa-fw w3-margin-right"></i>STATISTICS</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ADD CONTACT</a>
+        <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
     </div>
 </nav>
 
@@ -56,8 +48,7 @@ include("auth.php");
 <div class="w3-main" style="margin-left:300px">
 
     <!-- Header -->
-    <header id="portfolio">
-        <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <header id="directory">
         <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
         <div class="w3-container">
             <h1><b>DU Directory</b></h1>
@@ -107,7 +98,7 @@ include("auth.php");
     <div class="container" id="dummymodal">
     </div>
 
-    <script src = 'js/cardbuttons.js'></script>
+    <script src = 'js/editdeletebutton.js'></script>
 
     <!-- Pagination -->
     <div class="w3-center w3-padding-32">
@@ -166,21 +157,24 @@ include("auth.php");
     <div class="w3-container w3-padding-large w3-grey">
         <h3 id="contact"><b>Add Contact</b></h3>
         <hr class="w3-opacity">
-        <form action="/action_page.php" target="_blank">
+        <form action="insert_edit_contact.php" method="post">
+            <div class="w3-section">
+                <input class="w3-input w3-border" type="text" id="form_id" name="ID">
+            </div>
 
             <div class="w3-section">
                 <label>Name</label>
-                <input class="w3-input w3-border" type="text" id="form_name" name="Name" required>
+                <input class="w3-input w3-border" type="text" id="form_name" name="c_name" required>
             </div>
 
             <div class="w3-section">
                 <label>Designation</label>
-                <input class="w3-input w3-border" type="text" id="form_designation" name="designation" required>
+                <input class="w3-input w3-border" type="text" id="form_designation" name="c_designation" required>
             </div>
 
             <div class="w3-section" name="optionmenu">
                 <label>Division</label>
-                <select class="w3-select" type="text" id="form_division"  name="division" required onChange="updatesubdivisionOption(this.options[this.options.selectedIndex].value)" >
+                <select class="w3-select" type="text" id="form_division"  name="c_division" required onChange="updatesubdivisionOption(this.options[this.options.selectedIndex].value)" >
                     <option value="" disabled selected>Choose Division</option>
                     <?php
                     $sel_query="SELECT DISTINCT division FROM info;";
@@ -191,7 +185,7 @@ include("auth.php");
                 </select>
 
                 <label>Sub-Division</label>
-                <select class="w3-select" type="text" id="form_subdivision" name="subdivision" required>
+                <select class="w3-select" type="text" id="form_subdivision" name="c_subdivision" required>
                     <option value="" disabled selected>Choose SubDivision</option>
                     <?php
                     $sel_query="SELECT DISTINCT subdivision FROM info;";
@@ -216,27 +210,22 @@ include("auth.php");
 
             <div class="w3-section">
                 <label>Mobile</label>
-                <input class="w3-input w3-border" type="number" id="form_phone1" name="phone1" required>
+                <input class="w3-input w3-border" type="number" id="form_phone1" name="c_phone1" >
             </div>
 
             <div class="w3-section">
                 <label>Telephone</label>
-                <input class="w3-input w3-border" type="number" name="phone2" required>
+                <input class="w3-input w3-border" type="number" id="form_phone2" name="c_phone2" >
             </div>
 
             <div class="w3-section">
                 <label>Genuine Email</label>
-                <input class="w3-input w3-border" type="email" name="email1" required>
+                <input class="w3-input w3-border" type="email" id="form_email1" name="c_email1" >
             </div>
 
             <div class="w3-section">
                 <label>DU Email</label>
-                <input class="w3-input w3-border" type="email" name="email2" required>
-            </div>
-
-            <div class="w3-section">
-                <label>Message</label>
-                <input class="w3-input w3-border" type="text" name="Message" required>
+                <input class="w3-input w3-border" type="email" id="form_email2" name="c_email2" >
             </div>
 
             <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Add This Info</button>
@@ -249,7 +238,7 @@ include("auth.php");
         <div class="w3-row-padding">
             <div class="w3-third">
                 <h3>Copyright</h3>
-                <p>This Dashboard and corresponding android app DU-Directory is created as web project supervised by Md. Mamunur Rashid.</p>
+                <p>This Dashboard and corresponding android app DU-Directory is created as web project by Azizul Hakim and Jahid Hasan and supervised by Dr. Md. Mamun-or-Rashid.</p>
             </div>
 
             <div class="w3-third">
@@ -269,20 +258,20 @@ include("auth.php");
             </div>
 
             <div class="w3-third">
-                <h3>Other DU sites</h3>
-                <p>
-                    <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">London</span>
-                    <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
-                    <span class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Family</span>
-                    <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
-                    <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
-                </p>
+                <h3>Supervised By</h3>
+                <ul class="w3-ul w3-hoverable">
+                    <li class="w3-padding-16">
+                        <img src="image/proffesormamun.jpg" class="w3-left w3-margin-right" style="width:50px">
+                        <span class="w3-large">Dr. Md. Mamun-or-Rashid</span><br>
+                        <span>University of Dhaka</span>
+                    </li>
+                </ul>
             </div>
 
         </div>
     </footer>
 
-    <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">CseDU</a></div>
+    <div class="w3-black w3-center w3-padding-24">Powered by <a href="http://www.cse.du.ac.bd/" title="W3.CSS" target="_blank" class="w3-hover-opacity">CSEDU</a></div>
 
     <!-- End page content -->
 </div>

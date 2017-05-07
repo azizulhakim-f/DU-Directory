@@ -22,6 +22,7 @@ $div = 'কলা অনুষদ';
 $subdiv = 'cse';
 $phone1 = '034343434';
 $data = $row['name'] . '~' . $row['designation'] . '~' .  $row['division'] . '~' . $row['subdivision'] . '~' . $row['phone1'];
+$data = $data . '~' . $row['phone2'] . '~' . $row['email1'] . '~' . $row['email2'] . '~' . $row['id'];
 echo $data;
 
 ?>

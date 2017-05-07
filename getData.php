@@ -70,8 +70,8 @@ while($row = mysqli_fetch_assoc($result)) {
 
     //BUTTONS
 
-    $button = "<button class=\"w3-button  w3-dark-gray\" onclick='editContact(" . $row['id'] . ")' >Accept</button>";
-    $button .= "<button class=\"w3-button  w3-dark-gray\" onclick='deleteContact(" . $row['id'] . ")' >Decline</button>";
+    $button = "<button class=\"w3-button   w3-dark-gray\" onclick='editContact(" . $row['id'] . ")' >EDIT</button>";
+    $button .= "<button class=\"w3-button  w3-dark-gray\" onclick='deleteContact(" . $row['id'] . ")' >DELETE</button>";
     $display .= $button;
 
     $display .= "</div>";

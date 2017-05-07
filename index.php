@@ -38,6 +38,7 @@ include("auth.php");
         <a href="#statistics" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bar-chart fa-fw w3-margin-right"></i>STATISTICS</a>
         <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ADD CONTACT</a>
         <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
+        <a href="#copyrightsection" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-copyright fa-fw w3-margin-right"></i>ABOUT DEVELOPER</a>
     </div>
 </nav>
 
@@ -118,35 +119,35 @@ include("auth.php");
         <h4 id="statistics">Contact Statistics</h4>
         <p>অনুষদ</p>
         <div class="w3-grey">
-            <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">
+            <div class="w3-container w3-dark-grey w3-padding w3-center" style=<?php include ("php/stat_faculty.php") ?>>
                 <?php include ("php/contact_faculty.php") ?>
             </div>
         </div>
 
         <p>ইনস্টিটিউট</p>
         <div class="w3-grey">
-            <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">
+            <div class="w3-container w3-dark-grey w3-padding w3-center" style=<?php include ("php/stat_institute.php") ?>>
                 <?php include ("php/contact_institute.php") ?>
             </div>
         </div>
 
         <p>অফিস</p>
         <div class="w3-grey">
-            <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">
+            <div class="w3-container w3-dark-grey w3-padding w3-center" style=<?php include ("php/stat_office.php") ?>>
                 <?php include ("php/contact_office.php") ?>
             </div>
         </div>
 
         <p>হল</p>
         <div class="w3-grey">
-            <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">
+            <div class="w3-container w3-dark-grey w3-padding w3-center" style=<?php include ("php/stat_hall.php") ?>>
                 <?php include ("php/contact_hall.php") ?>
             </div>
         </div>
 
         <p>সর্বমোট</p>
         <div class="w3-grey">
-            <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">
+            <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:100%">
                 <?php include ("php/contact_all.php") ?>
             </div>
         </div>
@@ -234,7 +235,7 @@ include("auth.php");
     </div>
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding-32 w3-dark-grey">
+    <footer class="w3-container w3-padding-32 w3-dark-grey" id="copyrightsection">
         <div class="w3-row-padding">
             <div class="w3-third">
                 <h3>Copyright</h3>
@@ -242,7 +243,7 @@ include("auth.php");
             </div>
 
             <div class="w3-third">
-                <h3>Created By</h3>
+                <h3>Developed By</h3>
                 <ul class="w3-ul w3-hoverable">
                     <li class="w3-padding-16">
                         <img src="image/azizul.jpg" class="w3-left w3-margin-right" style="width:50px">

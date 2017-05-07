@@ -42,8 +42,8 @@ while($row = mysqli_fetch_assoc($result)) {
 
 
 
-    $display .= "<div class=\"w3-third w3-container w3-margin-bottom \">";
-    $display .= "<div class=\"w3-container w3-white w3-center w3-round-large\">";
+    $display .= "<div class=\"w3-third w3-animate-opacity w3-container w3-margin-bottom \">";
+    $display .= "<div class=\"w3-container w3-display-container w3-hover-grey w3-white w3-center w3-round-large\">";
 
     //NAME PART
     $name = "<header class=\"w3-container w3-center \">";
@@ -70,8 +70,8 @@ while($row = mysqli_fetch_assoc($result)) {
 
     //BUTTONS
 
-    $button = "<button class=\"w3-button   w3-dark-gray\" onclick='editContact(" . $row['id'] . ")' >EDIT</button>";
-    $button .= "<button class=\"w3-button  w3-dark-gray\" onclick='deleteContact(" . $row['id'] . ")' >DELETE</button>";
+    $button = "<button class=\"w3-button w3-display-middle w3-display-hover  w3-dark-gray\" onclick='editContact(" . $row['id'] . ")' >EDIT</button>";
+    $button .= "<button class=\"w3-button w3-display-bottommiddle w3-display-hover  w3-dark-gray\" onclick='deleteContact(" . $row['id'] . ")' >DELETE</button>";
     $display .= $button;
 
     $display .= "</div>";

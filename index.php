@@ -160,7 +160,7 @@ include("auth.php");
         <hr class="w3-opacity">
         <form action="insert_edit_contact.php" method="post">
             <div class="w3-section">
-                <input class="w3-input w3-border" type="text" id="form_id" name="ID">
+                <input class="w3-input w3-border" type="hidden" id="form_id" name="ID">
             </div>
 
             <div class="w3-section">
@@ -264,6 +264,11 @@ include("auth.php");
                     <li class="w3-padding-16">
                         <img src="image/proffesormamun.jpg" class="w3-left w3-margin-right" style="width:50px">
                         <span class="w3-large">Dr. Md. Mamun-or-Rashid</span><br>
+                        <span>University of Dhaka</span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <img src="image/loginavater.png" class="w3-left w3-margin-right" style="width:50px">
+                        <span class="w3-large">Md. Mofijul Islam</span><br>
                         <span>University of Dhaka</span>
                     </li>
                 </ul>

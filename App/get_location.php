@@ -4,7 +4,7 @@ $username="dudirectory";
 $password="dudirectory";
 $database="dudirectory";
 
-$sql = "select * from location;";
+$sql = "select * from location natural join buildings;";
 
 $con = mysqli_connect($hostname,$username,$password,$database);
 mysqli_query($con,'SET CHARACTER SET utf8');
@@ -16,8 +16,8 @@ $response = array();
 
 while($row = mysqli_fetch_array($result)){
 	array_push($response, array(
-				"dept_name"=>$row[0],
-				"building"=>$row[1],
+				"building"=>$row[0],
+				"dept_name"=>$row[1],
 				"lattitude"=>$row[2],
 				"longitude"=>$row[3],
 		));

@@ -37,8 +37,15 @@ if (isset($_POST['username'])){
     $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
     $result = mysqli_query($con,$query) or die(mysqli_error($con));
     $rows = mysqli_num_rows($result);
+
+
     if($rows==1){
+        $info = mysqli_fetch_assoc($result);
+
         $_SESSION['username'] = $username;
+        $_SESSION['division'] = $info['division'];
+        $_SESSION['subdivision'] = $info['subdivision'];
+
         header("Location: index.php"); // Redirect user to index.php
     }else{
         echo "<script language=\"JavaScript\">\n";

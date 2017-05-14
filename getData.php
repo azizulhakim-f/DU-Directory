@@ -6,8 +6,7 @@
  * Time: 8:02 PM
  */
 require('db.php');
-
-
+include('auth.php');
 
 $sql = "";
 if(!empty($_POST['dept'])){
@@ -29,6 +28,8 @@ $dept .= "<div class=\"w3-container w3-white w3-center w3-margin w3-gray w3-roun
 $dept .= "<h3><b>". $_POST['dept'] . "</b></h3>";
 $dept .= "</div>";
 $dept .= "</div>";
+
+
 $display .= $dept;
 
 $display .= "<div class=\"w3-row-padding\" id=\"contactdisplay\">";
@@ -38,8 +39,6 @@ while($row = mysqli_fetch_assoc($result)) {
     if( $count>0 && $count%3==0){
         $display .= "</div><div class=\"w3-row-padding\">";
     }
-
-
 
 
     $display .= "<div class=\"w3-third w3-animate-opacity w3-container w3-margin-bottom \">";
@@ -72,14 +71,14 @@ while($row = mysqli_fetch_assoc($result)) {
 
     $button = "<button class=\"w3-button w3-display-middle w3-display-hover  w3-dark-gray\" onclick='editContact(" . $row['id'] . ")' >EDIT</button>";
     $button .= "<button class=\"w3-button w3-display-bottommiddle w3-display-hover  w3-dark-gray\" onclick='deleteContact(" . $row['id'] . ")' >DELETE</button>";
-    $display .= $button;
+
+    //If no permission I will just... NOT add this buttons. :v
+    if($row['division']===$_SESSION['division'] && $row['subdivision']===$_SESSION['subdivision']) {
+        $display .= $button;
+    }
 
     $display .= "</div>";
     $display .= "</div>";
-
-
-
-
 
     $count++;
 }
@@ -87,3 +86,6 @@ while($row = mysqli_fetch_assoc($result)) {
 $display .= "</div>";
 
 echo $display;
+
+?>
+

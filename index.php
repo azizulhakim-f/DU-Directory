@@ -209,6 +209,21 @@ include("auth.php");
         </form>
     </div>
 
+	<!--Edit Location-->
+	<div class="w3-container w3-padding-large w3-grey">
+		<h3><b>Edit Location</b></h3>
+		<form action="php/set_building.php" method="post">
+			<div class="w3-section">
+
+				<select class="w3-select" type="text" id="form_building" name="building" required>
+					<?php include ("php/get_building_options.php") ?>
+				</select>
+
+				<button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Set Location</button>
+			</div>
+		</form>
+	</div>
+
     <!-- Footer -->
     <footer class="w3-container w3-padding-32 w3-dark-grey" id="copyrightsection">
         <div class="w3-row-padding">

@@ -12,10 +12,15 @@ if(!empty($_POST['dept'])){
     $sql = "SELECT * FROM `info` WHERE `subdivision` = ";
     $sql .= "'" . $_POST['dept'] . "'";
 }
-else {
+else if(isset($_SESSION['subdivision'])) {
     $_POST['dept'] = $_SESSION['subdivision'];
     $sql = "SELECT * FROM `info` WHERE `subdivision` = ";
     $sql .= "'".$_SESSION['subdivision']."'";
+}
+else {
+	$_POST['dept'] = "";
+	$sql = "SELECT * FROM `info` WHERE `subdivision` = ";
+	$sql .= "''";
 }
 
 $count = 0;

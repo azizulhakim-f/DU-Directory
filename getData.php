@@ -9,9 +9,10 @@ require('db.php');
 include('auth.php');
 
 $sql = "";
-if(!empty($_POST['dept'])){
+if(isset($_SESSION['subdivision'])){
+	$_POST['dept'] = $_SESSION['subdivision'];
     $sql = "SELECT * FROM `info` WHERE `subdivision` = ";
-    $sql .= "'" . $_POST['dept'] . "'";
+    $sql .= "'" . $_SESSION['subdivision'] . "'";
 }
 else {
     $_POST['dept'] = 'কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ';
@@ -73,7 +74,7 @@ while($row = mysqli_fetch_assoc($result)) {
     $button .= "<button class=\"w3-button w3-display-bottommiddle w3-display-hover  w3-dark-gray\" onclick='deleteContact(" . $row['id'] . ")' >DELETE</button>";
 
     //If no permission I will just... NOT add this buttons. :v
-    if($row['division']===$_SESSION['division'] && $row['subdivision']===$_SESSION['subdivision']) {
+    if($row['subdivision']===$_SESSION['subdivision']) {
         $display .= $button;
     }
 

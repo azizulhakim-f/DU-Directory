@@ -36,7 +36,7 @@ include("auth.php");
             <i class="fa fa-remove"></i>
         </a>
         <img src="image/du.png" style="width:80%;" class="w3-round"><br><br>
-        <h4><b>DU DASHBOARD</b></h4>
+		<h4><b><a href="index.php" style="text-decoration: none">DU DASHBOARD</a></b></h4>
         <p class="w3-text-grey"></p>
     </div>
     <div class="w3-bar-block">
@@ -273,7 +273,7 @@ include("auth.php");
     <!-- End page content -->
 </div>
 
-
+<?php echo $_SESSION['subdivision']; ?>
 
 </body>
 </html>

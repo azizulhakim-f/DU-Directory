@@ -42,8 +42,9 @@ include("auth.php");
     <div class="w3-bar-block">
         <a href="#directory" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-address-book fa-fw w3-margin-right"></i>DIRECTORY</a>
         <a href="#statistics" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bar-chart fa-fw w3-margin-right"></i>STATISTICS</a>
-        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ADD CONTACT</a>
-        <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
+		<a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ADD CONTACT</a>
+		<a href="#location" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>EDIT LOCATION</a>
+		<a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
         <a href="#copyrightsection" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-copyright fa-fw w3-margin-right"></i>ABOUT DEVELOPER</a>
     </div>
 </nav>
@@ -211,7 +212,7 @@ include("auth.php");
 
 	<!--Edit Location-->
 	<div class="w3-container w3-padding-large w3-grey">
-		<h3><b>Edit Location</b></h3>
+		<h3 id="location"><b>Edit Location</b></h3>
 		<form action="php/set_building.php" method="post">
 			<div class="w3-section">
 

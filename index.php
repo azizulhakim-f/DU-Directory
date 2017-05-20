@@ -93,8 +93,7 @@ include("auth.php");
                             xhttp.onreadystatechange = function(){
                                 if(this.readyState== 4 && this.status == 200){
                                     //console.log(this.responseText);
-                                    old_html = document.getElementById("subdivisionid").innerHTML;
-                                    document.getElementById("subdivisionid").innerHTML = old_html+this.responseText;
+                                    document.getElementById("subdivisionid").innerHTML = this.responseText;
                                     //document.getElementById("showName").insertAdjacentHTML('');
                                 }
                             };
@@ -248,10 +247,10 @@ include("auth.php");
     <!-- Footer -->
     <footer class="w3-container w3-padding-32 w3-dark-grey" id="copyrightsection">
         <div class="w3-row-padding">
-            <div class="w3-third">
+            <!--<div class="w3-third">
                 <h3>Copyright</h3>
-                <p>This Dashboard and corresponding android app DU-Directory is created as web project by Azizul Hakim and Jahid Hasan and supervised by Dr. Md. Mamun-or-Rashid.</p>
-            </div>
+                <p>This Dashboard and corresponding android app DU-Directory is created as web project by Azizul Hakim, Jahid Hasan, Sayontan Chowdhury and Md. Tahsin Tausif and supervised by Dr. Md. Mamun-or-Rashid.</p>
+            </div>-->
 
             <div class="w3-third">
                 <h3>Developed By</h3>
@@ -269,17 +268,28 @@ include("auth.php");
                 </ul>
             </div>
 
+			<div class="w3-third">
+				<h3>.</h3>
+				<ul class="w3-ul w3-hoverable">
+					<li class="w3-padding-16">
+						<img src="image/sayon.jpg" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-large">Sayontan Chowdhury</span><br>
+						<span>Csedu 20th batch</span>
+					</li>
+					<li class="w3-padding-16">
+						<img src="image/jahid.jpg" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-large">Md. Tahsin Tausif</span><br>
+						<span>Csedu 20th batch</span>
+					</li>
+				</ul>
+			</div>
+
             <div class="w3-third">
                 <h3>Supervised By</h3>
                 <ul class="w3-ul w3-hoverable">
                     <li class="w3-padding-16">
                         <img src="image/proffesormamun.jpg" class="w3-left w3-margin-right" style="width:50px">
                         <span class="w3-large">Dr. Md. Mamun-or-Rashid</span><br>
-                        <span>University of Dhaka</span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src="image/loginavater.png" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Md. Mofijul Islam</span><br>
                         <span>University of Dhaka</span>
                     </li>
                 </ul>

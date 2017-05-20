@@ -7,14 +7,14 @@
  */
 
 require('../db.php');
-include('../auth.php');
+//include('../auth.php');
 
 $div = $_POST['division'];
 $sel_query="SELECT DISTINCT subdivision FROM info where division = '".$div."'";
 $result = mysqli_query($con,$sel_query);
 
 $subdivs = "";
-$options = "";
+$options = "<option value=\"\" disabled selected>Choose SubDivision</option>";
 
 while($row = mysqli_fetch_assoc($result)){
     if($subdivs == "") $subdivs .= $row['subdivision'];

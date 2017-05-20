@@ -60,8 +60,9 @@ if (isset($_POST['username'])){
         <div class="w3-container">
             <div class="w3-display-topmiddle">
                 <h1 class="w3-jumbo w3-animate-top">DU DIRECTORY</h1>
-                <hr class="w3-border-grey" style="margin:auto;width:40%">
+                <!--<hr class="w3-border-grey" style="margin:auto;width:40%">-->
                 <button onclick="document.getElementById('id01').style.display='block'" class="w3-center w3-button w3-green ">Login</button>
+				<button onclick="window.location.href= 'open.php' " class="w3-right w3-button w3-green ">Free Site</button>
             </div>
 
 

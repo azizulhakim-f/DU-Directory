@@ -6,7 +6,6 @@
  * Time: 8:02 PM
  */
 require('db.php');
-include('auth.php');
 
 $sql = "";
 if(!empty($_POST['dept'])){

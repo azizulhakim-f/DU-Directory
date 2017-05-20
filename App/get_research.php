@@ -4,7 +4,7 @@ $username="dudirectory";
 $password="dudirectory";
 $database="dudirectory";
 
-$sql = "SELECT DISTINCT subdivision FROM info WHERE division = 'research';";
+$sql = "SELECT DISTINCT subdivision FROM info WHERE division = 'গবেষণা সেন্টার';";
 
 $con = mysqli_connect($hostname,$username,$password,$database);
 mysqli_query($con,'SET CHARACTER SET utf8');
@@ -16,7 +16,7 @@ $response = array();
 
 while($row = mysqli_fetch_array($result)){
 	array_push($response, array(
-				"office_name"=>$row[0],
+				"dept_name"=>$row[0],
 		));
 }
 

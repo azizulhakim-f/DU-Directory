@@ -43,7 +43,8 @@ include("auth.php");
         <a href="#directory" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-address-book fa-fw w3-margin-right"></i>DIRECTORY</a>
         <a href="#statistics" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bar-chart fa-fw w3-margin-right"></i>STATISTICS</a>
 		<a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ADD CONTACT</a>
-		<a href="#location" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>EDIT LOCATION</a>
+		<a href="#location" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-edit fa-fw w3-margin-right"></i>EDIT LOCATION</a>
+		<a href="changepass.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw w3-margin-right"></i>CHANGE PASSWORD</a>
 		<a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
         <a href="#copyrightsection" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-copyright fa-fw w3-margin-right"></i>ABOUT DEVELOPER</a>
     </div>
@@ -84,7 +85,26 @@ include("auth.php");
                     </div>
 
                     <span class="w3-margin-right w3-black w3-button" onclick="getContacts()">Filter</span>
-                    <script src = "js/subdivisionFilter.js"></script>
+                    <script>
+						function updatesubdivision(selecteddivision){
+
+                            var xhttp = new XMLHttpRequest();
+
+                            xhttp.onreadystatechange = function(){
+                                if(this.readyState== 4 && this.status == 200){
+                                    //console.log(this.responseText);
+                                    old_html = document.getElementById("subdivisionid").innerHTML;
+                                    document.getElementById("subdivisionid").innerHTML = old_html+this.responseText;
+                                    //document.getElementById("showName").insertAdjacentHTML('');
+                                }
+                            };
+
+                            var params = "division="+selecteddivision;
+                            xhttp.open("POST","php/get_subdivisions.php", true);
+                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xhttp.send(params);
+                        }
+					</script>
                     <script src = "js/loadContacts.js"></script>
                 </div>
             </div>
@@ -211,7 +231,7 @@ include("auth.php");
     </div>
 
 	<!--Edit Location-->
-	<div class="w3-container w3-padding-large w3-grey">
+	<div class="w3-container w3-padding-large">
 		<h3 id="location"><b>Edit Location</b></h3>
 		<form action="php/set_building.php" method="post">
 			<div class="w3-section">
@@ -272,8 +292,6 @@ include("auth.php");
 
     <!-- End page content -->
 </div>
-
-<?php echo $_SESSION['subdivision']; ?>
 
 </body>
 </html>

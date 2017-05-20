@@ -9,15 +9,14 @@ require('db.php');
 include('auth.php');
 
 $sql = "";
-if(isset($_SESSION['subdivision'])){
-	$_POST['dept'] = $_SESSION['subdivision'];
+if(!empty($_POST['dept'])){
     $sql = "SELECT * FROM `info` WHERE `subdivision` = ";
-    $sql .= "'" . $_SESSION['subdivision'] . "'";
+    $sql .= "'" . $_POST['dept'] . "'";
 }
 else {
-    $_POST['dept'] = 'কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ';
+    $_POST['dept'] = $_SESSION['subdivision'];
     $sql = "SELECT * FROM `info` WHERE `subdivision` = ";
-    $sql .= "'কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ'";
+    $sql .= "'".$_SESSION['subdivision']."'";
 }
 
 $count = 0;

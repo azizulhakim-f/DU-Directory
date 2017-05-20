@@ -77,7 +77,7 @@ while($row = mysqli_fetch_assoc($result)) {
     $button .= "<button class=\"w3-button w3-display-bottommiddle w3-display-hover  w3-dark-gray\" onclick='deleteContact(" . $row['id'] . ")' >DELETE</button>";
 
     //If no permission I will just... NOT add this buttons. :v
-    if($row['subdivision']===$_SESSION['subdivision']) {
+    if(isset($_SESSION['subdivision'])&&$row['subdivision']===$_SESSION['subdivision']) {
         $display .= $button;
     }
 

@@ -27,14 +27,14 @@
       <file leaf-file-name="getData.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+            <state relative-caret-position="261">
+              <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
               <folding>
-                <marker date="1495309620681" expanded="true" signature="160:202" ph="SELECT * FRO... info" />
-                <marker date="1495309620681" expanded="true" signature="350:392" ph="SELECT * FRO... info" />
-                <marker date="1495309620681" expanded="true" signature="482:524" ph="SELECT * FRO... info" />
-                <marker date="1495309620681" expanded="true" signature="661:785" ph="..." />
-                <marker date="1495309620681" expanded="true" signature="755:785" ph="..." />
+                <marker date="1495309785985" expanded="true" signature="160:202" ph="SELECT * FRO... info" />
+                <marker date="1495309785985" expanded="true" signature="350:392" ph="SELECT * FRO... info" />
+                <marker date="1495309785985" expanded="true" signature="482:524" ph="SELECT * FRO... info" />
+                <marker date="1495309785985" expanded="true" signature="661:785" ph="..." />
+                <marker date="1495309785985" expanded="true" signature="755:785" ph="..." />
               </folding>
             </state>
           </provider>
@@ -390,12 +390,12 @@
       <workItem from="1494997894322" duration="3917000" />
       <workItem from="1495026947636" duration="6715000" />
       <workItem from="1495256748842" duration="3563000" />
-      <workItem from="1495287681448" duration="14909000" />
+      <workItem from="1495287681448" duration="15072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101643000" />
+    <option name="totallyTimeSpent" value="101806000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="741" extended-state="0" />
@@ -753,14 +753,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        <state relative-caret-position="261">
+          <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
           <folding>
-            <marker date="1495309620681" expanded="true" signature="160:202" ph="SELECT * FRO... info" />
-            <marker date="1495309620681" expanded="true" signature="350:392" ph="SELECT * FRO... info" />
-            <marker date="1495309620681" expanded="true" signature="482:524" ph="SELECT * FRO... info" />
-            <marker date="1495309620681" expanded="true" signature="661:785" ph="..." />
-            <marker date="1495309620681" expanded="true" signature="755:785" ph="..." />
+            <marker date="1495309785985" expanded="true" signature="160:202" ph="SELECT * FRO... info" />
+            <marker date="1495309785985" expanded="true" signature="350:392" ph="SELECT * FRO... info" />
+            <marker date="1495309785985" expanded="true" signature="482:524" ph="SELECT * FRO... info" />
+            <marker date="1495309785985" expanded="true" signature="661:785" ph="..." />
+            <marker date="1495309785985" expanded="true" signature="755:785" ph="..." />
           </folding>
         </state>
       </provider>

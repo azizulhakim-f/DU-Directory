@@ -277,7 +277,7 @@ include("auth.php");
 						<span>Csedu 20th batch</span>
 					</li>
 					<li class="w3-padding-16">
-						<img src="image/jahid.jpg" class="w3-left w3-margin-right" style="width:50px">
+						<img src="image/loginavater.png" class="w3-left w3-margin-right" style="width:50px">
 						<span class="w3-large">Md. Tahsin Tausif</span><br>
 						<span>Csedu 20th batch</span>
 					</li>

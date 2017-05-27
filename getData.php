@@ -54,7 +54,10 @@ while($row = mysqli_fetch_assoc($result)) {
     $name .= "</header>";
     $display .= $name;
 
-    $display .= "<p>" . $row["designation"] . "</p>";
+    $display .= "<p>" . $row["designation"];
+    if($row["comment"]=="Leave")
+        $display .= " (ছুটিতে)";
+    $display .=  "</p>";
     $phn = "<div class=\"w3-row\">";
     $phn .= "<div class=\"w3-half w3-container\"><p>";
     if($row["phone1"]) $phn .= $row["phone1"];

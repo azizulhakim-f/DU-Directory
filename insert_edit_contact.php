@@ -16,14 +16,17 @@ $phone1 = $_POST['c_phone1'];
 $phone2 = $_POST['c_phone2'];
 $email1 = $_POST['c_email1'];
 $email2 = $_POST['c_email2'];
+$comment = " ";
+if(isset($_POST['c_leave']))
+	$comment = "Leave";
 if("" == trim($_POST['ID'])) {
-    $sql = "insert into info (`id`,`name`,`division`,`subdivision`, `designation`, `phone1`,`phone2`,`email1`,`email2`) values 
-                        ('$id','$name','$division','$subdivision','$designation', '$phone1','$phone1','$email1', '$email2')";
+    $sql = "insert into info (`id`,`name`,`division`,`subdivision`, `designation`, `phone1`,`phone2`,`email1`,`email2`, `comment`) values 
+                        ('$id','$name','$division','$subdivision','$designation', '$phone1','$phone1','$email1', '$email2', '$comment')";
 }
 else {
     $sql = "UPDATE info SET 
     `name`='$name',`division`='$division',`subdivision`='$subdivision', `designation`='$designation', 
-    `phone1`='$phone1',`phone2`='$phone2',`email1`='$email1',`email2`='$email2'
+    `phone1`='$phone1',`phone2`='$phone2',`email1`='$email1',`email2`='$email2', `comment`='$comment'
     WHERE `id`='$id' ";
 }
 mysqli_query($con,$sql) or die(mysql_error());

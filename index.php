@@ -215,7 +215,7 @@ include("auth.php");
             </div>
 
             <div class="w3-section">
-                <label>Genuine Email</label>
+                <label>Personal Email</label>
                 <input class="w3-input w3-border" type="email" id="form_email1" name="c_email1" >
             </div>
 
@@ -223,6 +223,11 @@ include("auth.php");
                 <label>DU Email</label>
                 <input class="w3-input w3-border" type="email" id="form_email2" name="c_email2" >
             </div>
+
+			<div class="w3-section">
+				<!--<label>DU Email</label>-->
+				<input type="checkbox" id="form_leave" name="c_leave" value="OnLeave" style="width: 1em;height: 1em;"> On Leave<br>
+			</div>
 
             <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Add This Info</button>
 
